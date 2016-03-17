@@ -165,6 +165,9 @@ var AddFishForm = React.createClass({
   <Header />
 */
 var Header = React.createClass({
+  propTypes: {
+    tagline: React.PropTypes.string.isRequired
+  },
   render() {
     const {tagline} = this.props;
     return (
@@ -186,6 +189,11 @@ var Header = React.createClass({
   <Order />
 */
 var Order = React.createClass({
+  propTypes: {
+    order: React.PropTypes.object.isRequired,
+    fishes: React.PropTypes.object.isRequired,
+    removeFromOrder: React.PropTypes.func.isRequired
+  },
   renderOrder(index) {
     const {order, fishes} = this.props;
     const fish = fishes[index];
@@ -249,6 +257,13 @@ var Order = React.createClass({
   <Inventory />
 */
 var Inventory = React.createClass({
+  propTypes: {
+    linkState: React.PropTypes.func.isRequired,
+    fishes: React.PropTypes.object.isRequired,
+    removeFish: React.PropTypes.func.isRequired,
+    loadSamples: React.PropTypes.func.isRequired,
+    addFish: React.PropTypes.func
+  },
   renderInventory(index) {
     // Trigger state update from a form field update
     return (
