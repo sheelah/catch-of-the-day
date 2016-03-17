@@ -191,15 +191,24 @@ var Order = React.createClass({
     const fish = fishes[index];
     const count = order[index];
     const removeButton = <button onClick={this.props.removeFromOrder.bind(null, index)}>&times;</button>
+
     if (!fish) {
       return <li key={index}>Sorry, fish no longer available! {removeButton}</li>
     }
     return (
       <li key={index}>
-        {count}lbs
-        {fish.name}
+        <span>
+          <CSSTransitionGroup
+            className="count"
+            component="span"
+            transitionName="count"
+            transitionEnterTimeout={250}
+            transitionLeaveTimeout={250}>
+            <span key={count}>{count}</span>
+          </CSSTransitionGroup>
+          lbs {fish.name} {removeButton}
+        </span>
         <span className="price">{h.formatPrice(count * fish.price)}</span>
-        {removeButton}
       </li>
     )
   },
