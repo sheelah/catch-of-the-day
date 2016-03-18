@@ -6,7 +6,7 @@ import React from 'react';
 import { History } from 'react-router';
 import h from '../helpers';
 
-var StorePicker = React.createClass({
+const StorePicker = React.createClass({
   mixins: [History],
   goToStore(event) {
     event.preventDefault();

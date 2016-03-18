@@ -6,11 +6,10 @@ import React from 'react';
 import Catalyst from 'react-catalyst';
 // Firebase
 import Rebase from 're-base';
-var base = Rebase.createClass('https://torrid-inferno-7394.firebaseio.com/');
+const base = Rebase.createClass('https://torrid-inferno-7394.firebaseio.com/');
 
 // Import components
 import Fish from './Fish';
-import AddFishForm from './AddFishForm';
 import Header from './Header';
 import Inventory from './Inventory';
 import Order from './Order';
@@ -18,7 +17,7 @@ import Order from './Order';
 // Import sample fish data
 import sampleFishes from '../sample-fishes';
 
-var App = React.createClass({
+const App = React.createClass({
   mixins: [Catalyst.LinkedStateMixin],
   getInitialState() {
     return {

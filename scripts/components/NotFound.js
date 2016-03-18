@@ -4,7 +4,7 @@
 import React from 'react';
 
 // Stateless functional component
-var NotFound = () => (
+const NotFound = () => (
   <h1>Not Found!</h1>
 );
 

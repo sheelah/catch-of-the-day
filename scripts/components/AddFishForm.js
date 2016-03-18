@@ -4,7 +4,7 @@
  */
 import React from 'react';
 
-var AddFishForm = React.createClass({
+const AddFishForm = React.createClass({
   createFish(event) {
     // Stop form from submitting
     event.preventDefault();

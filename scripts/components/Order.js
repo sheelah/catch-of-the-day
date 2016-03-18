@@ -6,7 +6,7 @@ import React from 'react';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
 import h from '../helpers';
 
-var Order = React.createClass({
+const Order = React.createClass({
   propTypes: {
     order: React.PropTypes.object.isRequired,
     fishes: React.PropTypes.object.isRequired,

@@ -5,7 +5,7 @@
 import React from 'react';
 import h from '../helpers';
 
-var Fish = React.createClass({
+const Fish = React.createClass({
   onAddToOrderClick() {
     this.props.addToOrder(this.props.index);
   },

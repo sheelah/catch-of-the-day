@@ -1,37 +1,21 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var CSSTransitionGroup = require('react-addons-css-transition-group');
-
-var ReactRouter = require('react-router');
-var Router = ReactRouter.Router;
-var Route = ReactRouter.Route;
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Router, Route } from 'react-router';
 // Set up pushState for clean URLs and preserve history
-var createBrowserHistory = require('history/lib/createBrowserHistory');
-
-var h = require('./helpers');
-
-// Firebase
-var Rebase = require('re-base');
-var base = Rebase.createClass('https://torrid-inferno-7394.firebaseio.com/');
+import { createHistory } from 'history';
 
 /*
   Import Components
  */
- import App from './components/App';
- import NotFound from './components/NotFound';
- import StorePicker from './components/StorePicker';
- import Fish from './components/Fish';
- import AddFishForm from './components/AddFishForm';
- import Header from './components/Header';
- import Inventory from './components/Inventory';
- import Order from './components/Order';
-
+import App from './components/App';
+import StorePicker from './components/StorePicker';
+import NotFound from './components/NotFound';
 
 /*
   Routes
 */
-var routes = (
-  <Router history={createBrowserHistory()} >
+const routes = (
+  <Router history={createHistory()} >
     <Route path="/" component={StorePicker} />
     <Route path="/store/:storeId" component={App} />
     <Route path="*" component={NotFound} />

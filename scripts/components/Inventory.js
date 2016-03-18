@@ -5,7 +5,7 @@
 import React from 'react';
 import AddFishForm from './AddFishForm';
 
-var Inventory = React.createClass({
+const Inventory = React.createClass({
   propTypes: {
     linkState: React.PropTypes.func.isRequired,
     fishes: React.PropTypes.object.isRequired,
