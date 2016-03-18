@@ -19,6 +19,11 @@ var base = Rebase.createClass('https://torrid-inferno-7394.firebaseio.com/');
 var Catalyst = require('react-catalyst');
 
 /*
+  Import Components
+ */
+ import NotFound from './components/NotFound';
+
+/*
   App
  */
 var App = React.createClass({
@@ -323,6 +328,7 @@ var routes = (
   <Router history={createBrowserHistory()} >
     <Route path="/" component={StorePicker} />
     <Route path="/store/:storeId" component={App} />
+    <Route path="*" component={NotFound} />
   </Router>
 );
 
