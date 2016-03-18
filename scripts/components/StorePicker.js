@@ -4,17 +4,21 @@
 */
 import React from 'react';
 import { History } from 'react-router';
+import reactMixin from 'react-mixin';
+import autobind from 'autobind-decorator';
 import h from '../helpers';
 
-const StorePicker = React.createClass({
-  mixins: [History],
+@autobind
+class StorePicker extends React.Component {
+
   goToStore(event) {
     event.preventDefault();
     // Get data from input
     let storeId = this.refs.storeId.value;
     this.history.pushState(null, '/store/' + storeId);
     // Transition from <StorePicker /> to <App />
-  },
+  }
+
   render() {
     return (
       <form className="store-selector" onSubmit={this.goToStore}>
@@ -24,6 +28,9 @@ const StorePicker = React.createClass({
       </form>
     )
   }
-});
+}
+
+// Add mixin workaround for React ES6 component class
+reactMixin.onClass(StorePicker, History);
 
 export default StorePicker;
