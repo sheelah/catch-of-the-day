@@ -6,10 +6,11 @@ import React from 'react';
 import Catalyst from 'react-catalyst';
 import reactMixin from 'react-mixin';
 import autobind from 'autobind-decorator';
+import config from '../config';
 
 // Firebase
 import Rebase from 're-base';
-const base = Rebase.createClass('https://torrid-inferno-7394.firebaseio.com/');
+const base = Rebase.createClass(config.firebaseUrl);
 
 // Import components
 import Fish from './Fish';
@@ -101,7 +102,7 @@ class App extends React.Component {
           </ul>
         </div>
         <Order fishes={this.state.fishes} order={this.state.order} removeFromOrder={this.removeFromOrder} />
-        <Inventory fishes={this.state.fishes} addFish={this.addFish} removeFish={this.removeFish} loadSamples={this.loadSamples} linkState={this.linkState.bind(this)} />
+        <Inventory fishes={this.state.fishes} addFish={this.addFish} removeFish={this.removeFish} loadSamples={this.loadSamples} linkState={this.linkState.bind(this)} {...this.props} />
       </div>
     )
   }
